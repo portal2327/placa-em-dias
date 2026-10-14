@@ -1,0 +1,33 @@
+
+name: Atualizar portal esportivo
+
+on:
+  schedule:
+    - cron: "0 10,13,16,19,22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar arquivos do site
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Atualizar notícias
+        run: python atualizar.py
+
+      - name: Salvar notícias no GitHub
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html noticias/ estado.json
+          git diff --cached --quiet || git commit -m "Atualiza notícias esportivas"
+          git push
