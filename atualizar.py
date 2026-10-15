@@ -99,19 +99,99 @@ def build_page(items, errors):
 <meta name="description" content="Portal independente com manchetes e links para notícias de futebol e outros esportes.">
 <title>Placar em Dia | Futebol e Esportes</title>
 <style>
-:root{{--bg:#f3f5f7;--card:#fff;--ink:#15202b;--muted:#637083;--green:#087f5b;--line:#e2e8ee}}
-*{{box-sizing:border-box}} body{{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}}
-header{{background:#082f26;color:white;padding:34px 18px}} .wrap{{max-width:1080px;margin:auto;padding:0 18px}}
-.brand{{font-weight:900;letter-spacing:-1px;font-size:clamp(30px,5vw,46px);margin:0}}
-header p{{color:#d4f5e8;margin:8px 0 0}} .updated{{font-size:13px;color:#c4e8dc;margin-top:16px}}
-main{{padding:24px 0 48px}} section{{margin:0 0 34px}} h2{{font-size:23px;margin:0 0 14px;border-left:5px solid var(--green);padding-left:11px}}
-.cards{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px}}
-.card{{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 3px 12px #14202b08}}
-.meta,.source{{color:var(--muted);font-size:13px}} .meta{{margin:0 0 8px}} h3{{font-size:18px;line-height:1.35;margin:0 0 12px}}
-a{{color:#075e49}} h3 a{{text-decoration:none}} h3 a:hover{{text-decoration:underline}}
-.read{{font-weight:700;font-size:14px;text-decoration:none}} .notice{{background:#fff7db;padding:12px;border-radius:8px}}
-footer{{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:13px}}
-footer a{{color:inherit}} .disclaimer{{font-size:13px;color:var(--muted);margin-top:20px}}
+    :root {
+      --header-bg: #0b3c26;
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f4c2e, #0b3c26);
+      color: white;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--header-bg);
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #2e7d32;
+      padding-left: 12px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .news-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: all 0.25s ease-in-out;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .news-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #1b5e20;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      background-color: #e8f5e9;
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+
+    .news-link:hover {
+      background-color: #c8e6c9;
+    }
 </style>
 </head>
 <body>
