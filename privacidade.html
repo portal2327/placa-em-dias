@@ -1,1 +1,196 @@
-<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Privacidade | Placar em Dia</title><body style="font:16px/1.6 system-ui;max-width:760px;margin:40px auto;padding:0 18px"><h1>Política de privacidade</h1><p>Este site de demonstração não oferece cadastro nem coleta intencionalmente dados enviados por visitantes. Se forem adicionados anúncios, métricas, comentários ou formulários, atualize esta política para explicar quais dados são tratados e por quais fornecedores.</p><p><a href="index.html">Voltar à página inicial</a></p></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placar em Dia | Futebol e Esportes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #0d47a1; /* Azul desportivo premium ou #004d40 para verde */
+      --header-bg: #0b3c26; /* Verde escuro moderno */
+      --accent-color: #1b5e20;
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* Cabeçalho */
+    header {
+      background: linear-gradient(135deg, #0f4c2e, #0b3c26);
+      color: white;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .brand logo {
+      font-size: 2.2rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    header p.subtitle {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 6px;
+    }
+
+    header p.updated {
+      font-size: 0.825rem;
+      opacity: 0.7;
+    }
+
+    /* Conteúdo Principal */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--header-bg);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-left: 4px solid #2e7d32;
+      padding-left: 12px;
+    }
+
+    /* Grelha de Notícias */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Cartão de Notícia */
+    .news-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      transition: all 0.25s ease-in-out;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .meta-info {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .news-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0f172a;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .source-info {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .news-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #1b5e20;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      background-color: #e8f5e9;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+      align-self: flex-start;
+    }
+
+    .news-link:hover {
+      background-color: #c8e6c9;
+      color: #052e16;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="brand">
+        <span>⚽</span>
+        <h1>PLACAR EM DIA</h1>
+      </div>
+      <p class="subtitle">Futebol, resultados e notícias do mundo esportivo.</p>
+      <p class="updated">Atualizado automaticamente em 15/10/2026 às 02:25</p>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="category-title">Futebol brasileiro</h2>
+
+    <div class="news-grid">
+      <!-- Exemplo de Cartão -->
+      <div class="news-card">
+        <div>
+          <div class="meta-info">Futebol brasileiro • 15/10/2026 às 01:17</div>
+          <h3 class="news-title">Palmeiras é o 2º time do futebol brasileiro a bater marca de 100 gols no ano; veja ranking - ge</h3>
+          <p class="source-info">Fonte: ge</p>
+        </div>
+        <a href="#" class="news-link" target="_blank">Ler na fonte original ↗</a>
+      </div>
+
+      <!-- Repete para os outros cartões... -->
+    </div>
+  </main>
+
+</body>
+</html>
