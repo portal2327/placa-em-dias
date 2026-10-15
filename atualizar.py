@@ -99,68 +99,68 @@ def build_page(items, errors):
 <meta name="description" content="Portal independente com manchetes e links para notícias de futebol e outros esportes.">
 <title>Placar em Dia | Futebol e Esportes</title>
 <style>
-    :root {
+    :root {{
       --header-bg: #0b3c26;
       --bg-color: #f4f6f8;
       --card-bg: #ffffff;
       --text-main: #1e293b;
       --text-muted: #64748b;
-    }
+    }}
 
-    * {
+    * {{
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
+    }}
 
-    body {
+    body {{
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-main);
       line-height: 1.5;
-    }
+    }}
 
-    header {
+    header {{
       background: linear-gradient(135deg, #0f4c2e, #0b3c26);
       color: white;
       padding: 2.5rem 1.5rem;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+    }}
 
-    .header-container {
+    .header-container {{
       max-width: 1200px;
       margin: 0 auto;
-    }
+    }}
 
-    header h1 {
+    header h1 {{
       font-size: 2.2rem;
       font-weight: 700;
       text-transform: uppercase;
-    }
+    }}
 
-    main {
+    main {{
       max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1.5rem;
-    }
+    }}
 
-    .category-title {
+    .category-title {{
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--header-bg);
       margin-bottom: 1.5rem;
       border-left: 4px solid #2e7d32;
       padding-left: 12px;
-    }
+    }}
 
-    .news-grid {
+    .cards {{
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 1.5rem;
-    }
+    }}
 
-    .news-card {
+    .card {{
       background: var(--card-bg);
       border-radius: 12px;
       padding: 1.5rem;
@@ -170,14 +170,40 @@ def build_page(items, errors):
       border: 1px solid #e2e8f0;
       box-shadow: 0 2px 4px rgba(0,0,0,0.02);
       transition: all 0.25s ease-in-out;
-    }
+    }}
 
-    .news-card:hover {
+    .card:hover {{
       transform: translateY(-4px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    }
+    }}
 
-    .news-link {
+    .meta {{
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }}
+
+    h3 {{
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }}
+
+    h3 a {{
+      color: var(--text-main);
+      text-decoration: none;
+    }}
+
+    h3 a:hover {{
+      color: #1b5e20;
+    }}
+
+    .source {{
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }}
+
+    .read {{
       display: inline-block;
       text-decoration: none;
       color: #1b5e20;
@@ -186,12 +212,12 @@ def build_page(items, errors):
       padding: 8px 14px;
       background-color: #e8f5e9;
       border-radius: 6px;
-      margin-top: 12px;
-    }
+      align-self: flex-start;
+    }}
 
-    .news-link:hover {
+    .read:hover {{
       background-color: #c8e6c9;
-    }
+    }}
 </style>
 </head>
 <body>
