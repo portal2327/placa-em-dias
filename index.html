@@ -6,26 +6,132 @@
 <meta name="description" content="Portal independente com manchetes e links para notícias de futebol e outros esportes.">
 <title>Placar em Dia | Futebol e Esportes</title>
 <style>
-:root{--bg:#f3f5f7;--card:#fff;--ink:#15202b;--muted:#637083;--green:#087f5b;--line:#e2e8ee}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
-header{background:#082f26;color:white;padding:34px 18px} .wrap{max-width:1080px;margin:auto;padding:0 18px}
-.brand{font-weight:900;letter-spacing:-1px;font-size:clamp(30px,5vw,46px);margin:0}
-header p{color:#d4f5e8;margin:8px 0 0} .updated{font-size:13px;color:#c4e8dc;margin-top:16px}
-main{padding:24px 0 48px} section{margin:0 0 34px} h2{font-size:23px;margin:0 0 14px;border-left:5px solid var(--green);padding-left:11px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 3px 12px #14202b08}
-.meta,.source{color:var(--muted);font-size:13px} .meta{margin:0 0 8px} h3{font-size:18px;line-height:1.35;margin:0 0 12px}
-a{color:#075e49} h3 a{text-decoration:none} h3 a:hover{text-decoration:underline}
-.read{font-weight:700;font-size:14px;text-decoration:none} .notice{background:#fff7db;padding:12px;border-radius:8px}
-footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:13px}
-footer a{color:inherit} .disclaimer{font-size:13px;color:var(--muted);margin-top:20px}
+    :root {
+      --header-bg: #0b3c26;
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f4c2e, #0b3c26);
+      color: white;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--header-bg);
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #2e7d32;
+      padding-left: 12px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: all 0.25s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 a {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    h3 a:hover {
+      color: #1b5e20;
+    }
+
+    .source {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .read {
+      display: inline-block;
+      text-decoration: none;
+      color: #1b5e20;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      background-color: #e8f5e9;
+      border-radius: 6px;
+      align-self: flex-start;
+    }
+
+    .read:hover {
+      background-color: #c8e6c9;
+    }
 </style>
 </head>
 <body>
 <header><div class="wrap">
 <p class="brand">⚽ PLACAR EM DIA</p>
 <p>Futebol, resultados e notícias do mundo esportivo.</p>
-<p class="updated">Atualizado automaticamente: 15/10/2026 às 03:15</p>
+<p class="updated">Atualizado automaticamente: 15/10/2026 às 03:52</p>
 </div></header>
 <main class="wrap">
 
@@ -49,28 +155,28 @@ footer a{color:inherit} .disclaimer{font-size:13px;color:var(--muted);margin-top
               <a class="read" href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxPTlMwN25Bc2htS2tNN21ReDdsWEhkRkgwV19XTGpFenl4UHJYMklxeTZ5Y0I4Ri1yUWRhLVg1cFJtaWticDBvUldSaUxOUng3RF9FcUZUbkJ2dEFBS0VRNmhkYXByY1pNRFRiVmVpcHZyZkVVWHFsMDJYa0lYZlhRYTZjWGFDczdjTVZUeldCTktHQU5FSE4xTzVJaHF6X212Z29scVNxak9LUFFMNEVFcE5LZWQxdlo5V2NMNEZxUzNnYnFKdTA3TG9Oc0VZbjRnUTFnMFpMONIB5gFBVV95cUxOeDZxYzl6QV9xRlREcm1JNUpfVjB1STlpbGpmT19PMXZlOHRIN3pCX0Rod1k2YmtodGhXNmZoZmtuMnVHNTdYZWc0bVlJZ1JTdlZqUzBfdWR5cmh0Zy1DT25mYVNZeXBDaFdULWR4eHBMWjJjOGloeGZFQTJudW5YYjVZS2F0VnlUSk4yN2ROTG90X2dscWRJdk1STEV2Q21xXzc5M1I0QjFLNzZjOXVZWm5NU2kwaklrQ2laTXVWYWFaLVA2SjFrUjg4LUI5RGtGZnVCVkQySzZRZ1VJTFpPMU8wdzg0UQ?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
             </article>
             <article class="card">
+              <p class="meta">Futebol brasileiro · 14/10/2026 às 22:33</p>
+              <h3><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPNGFhR2tjRkptRTcwZDh5enplZEtRaXZXZWZzM0pCN2lJRTJEWGhOVDdvQmpSZU1XTjRVWkxtNGJ6RG5LOW5xOXVkeHJ4UWNMY0U2WldaNTNESXZFRHktN0tueHQ1cXY5S1VVbG9UOXp3ckUyckNxaUNGbDRBd3lvRjd0NUFmY1ZmWXBZRFBqM0V0UWd4amY1ZFNaWHVUR2RmNGFKWGJZa052WmJJbmwxVzl1RlpfWUd1OU1zb3ppdGw3Q3FtR0pB?oc=5" target="_blank" rel="noopener noreferrer">Brasileirão de futebol de cegos começa domingo no CT Paralímpico em SP - Agência Brasil</a></h3>
+              <p class="source">Fonte: Agência Brasil</p>
+              <a class="read" href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPNGFhR2tjRkptRTcwZDh5enplZEtRaXZXZWZzM0pCN2lJRTJEWGhOVDdvQmpSZU1XTjRVWkxtNGJ6RG5LOW5xOXVkeHJ4UWNMY0U2WldaNTNESXZFRHktN0tueHQ1cXY5S1VVbG9UOXp3ckUyckNxaUNGbDRBd3lvRjd0NUFmY1ZmWXBZRFBqM0V0UWd4amY1ZFNaWHVUR2RmNGFKWGJZa052WmJJbmwxVzl1RlpfWUd1OU1zb3ppdGw3Q3FtR0pB?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
+            </article>
+            <article class="card">
               <p class="meta">Futebol brasileiro · 14/10/2026 às 20:21</p>
               <h3><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNZXF2NDdnQlR6R2g4NnJtczA4VFh4b2tvUS1jSmVRa19NSElLb1F4TjFPTnpVb05lNmJsTy1ENTN4OEZuU1Ewd0kwOU03NlEyZC13V2dpY1VNTnMyOEJZbkRHcWM3aVo3YUdBRDAxTV9mcWF4RG1hZi0zUUxIdGViWFdsUzFZeWc2X1UwOVVUTGV5NG0tS2hKU1p2X25aTHF1MTJKRHZZZFB1dzR0QUNCR3oyZ0l4a0JkQ0NPZElsMA?oc=5" target="_blank" rel="noopener noreferrer">CBF admite erro de árbitro em lance decisivo no GreNal pelo Brasileirão - CNN Brasil</a></h3>
               <p class="source">Fonte: CNN Brasil</p>
               <a class="read" href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNZXF2NDdnQlR6R2g4NnJtczA4VFh4b2tvUS1jSmVRa19NSElLb1F4TjFPTnpVb05lNmJsTy1ENTN4OEZuU1Ewd0kwOU03NlEyZC13V2dpY1VNTnMyOEJZbkRHcWM3aVo3YUdBRDAxTV9mcWF4RG1hZi0zUUxIdGViWFdsUzFZeWc2X1UwOVVUTGV5NG0tS2hKU1p2X25aTHF1MTJKRHZZZFB1dzR0QUNCR3oyZ0l4a0JkQ0NPZElsMA?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
             </article>
             <article class="card">
-              <p class="meta">Futebol brasileiro · 14/10/2026 às 18:31</p>
-              <h3><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPMHRtdTNEcHFuTzB4TXl3WUR0a1FzcDByempGd0trZXpwNmlza2dpalZQWVJ3QzljUDhhQ2labXBYTmdRS3JNaTFfcWVXM25LTjZoeWdUV3F5eS14OVZ0bVJhNTBaQm8ySFM0WkVwUmZINlZBVEltbUVHRW1TNHBZWVRyZC1tSWpYZ3hTVjFmaDBrbXZSSkxWSjFqRThHc1h60gGmAUFVX3lxTE9nTUVoYVJPeEFDbnkteTBBdDF1TTRhd29lQ014QkxBZDl3MnRFaV9uQk9ZbVhEQkRIZ0NrZFFMWFpkMWFwSUNqc0VsWnhNSi1mNV9pVG81ckxtNnUwNWNsdzVGZnc0d0ctNlN6LW5mYzBvWlRPRWpYUC0xSlBLbVFKMUlwVEVvcWU2LUhPeGtnaDhjdTlTZE1DV0dwOElfNDM2aE84ZHc?oc=5" target="_blank" rel="noopener noreferrer">Athletico e Coritiba estão entre as menores folhas salariais do Brasileirão; veja os valores - Banda B</a></h3>
-              <p class="source">Fonte: Banda B</p>
-              <a class="read" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPMHRtdTNEcHFuTzB4TXl3WUR0a1FzcDByempGd0trZXpwNmlza2dpalZQWVJ3QzljUDhhQ2labXBYTmdRS3JNaTFfcWVXM25LTjZoeWdUV3F5eS14OVZ0bVJhNTBaQm8ySFM0WkVwUmZINlZBVEltbUVHRW1TNHBZWVRyZC1tSWpYZ3hTVjFmaDBrbXZSSkxWSjFqRThHc1h60gGmAUFVX3lxTE9nTUVoYVJPeEFDbnkteTBBdDF1TTRhd29lQ014QkxBZDl3MnRFaV9uQk9ZbVhEQkRIZ0NrZFFMWFpkMWFwSUNqc0VsWnhNSi1mNV9pVG81ckxtNnUwNWNsdzVGZnc0d0ctNlN6LW5mYzBvWlRPRWpYUC0xSlBLbVFKMUlwVEVvcWU2LUhPeGtnaDhjdTlTZE1DV0dwOElfNDM2aE84ZHc?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
+              <p class="meta">Futebol brasileiro · 14/10/2026 às 19:27</p>
+              <h3><a href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxOU1F0aVFLRU5PVkJWSm5NT1hFQUFqT3QwRGZxcUtEQTV0aElKdWdOQ1VOMEhXNkhjY2wwRktMb2ZjVkNIV3AtUjNjTDNhaERzWHdaY2Z4SWdrdGtoLWR0ZkpicGhQV3hrQjYzdkstUlpoc2RHaHpQMmREMV9WZ2lXR1k4OFdzaVRZZ192RE9HNmRHUGppREFwVll1STZoNXo3cU9HNWtReElxYmZwT1ExN2QwaFRXLWYzRlk4R1JFWHAyTjNsZ1FpWGFQY0hvTW1idTN2aDRFLWo0NzN0X1A2cXhmSEw0YVd5VDhB?oc=5" target="_blank" rel="noopener noreferrer">Agenda do futebol na RECORD: confira a próxima partida do Campeonato Brasileiro 2026 - R7 Esportes</a></h3>
+              <p class="source">Fonte: R7 Esportes</p>
+              <a class="read" href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxOU1F0aVFLRU5PVkJWSm5NT1hFQUFqT3QwRGZxcUtEQTV0aElKdWdOQ1VOMEhXNkhjY2wwRktMb2ZjVkNIV3AtUjNjTDNhaERzWHdaY2Z4SWdrdGtoLWR0ZkpicGhQV3hrQjYzdkstUlpoc2RHaHpQMmREMV9WZ2lXR1k4OFdzaVRZZ192RE9HNmRHUGppREFwVll1STZoNXo3cU9HNWtReElxYmZwT1ExN2QwaFRXLWYzRlk4R1JFWHAyTjNsZ1FpWGFQY0hvTW1idTN2aDRFLWo0NzN0X1A2cXhmSEw0YVd5VDhB?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
             </article>
             <article class="card">
-              <p class="meta">Futebol brasileiro · 14/10/2026 às 18:12</p>
-              <h3><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxORE5XT1RZVlJfU1l3WHlJakxUZ3QyR0lyVExoMVlGaEFXNFVJVlZORDZ0Rmx0aEVCSzBWcW1kRjhDby1JRFFnc2hERE5HWVItZXF0b25NZFQ4QzBLSUgzTzRxdXZzNXROYUpPNHUtV1YwTDEydThZUmdNSElJMDRjYlJFTDRVTUxfSGdyQ2RtTkdhekZwZmgzc1lGZnV3WXo3SkdxYTdaTUMtdW5fMWFDZTNDVEtTWEozcE96MTI1bVA?oc=5" target="_blank" rel="noopener noreferrer">Americanense Izabele de Oliveira é escalada para a Série A do Brasileirão - O Liberal</a></h3>
-              <p class="source">Fonte: O Liberal</p>
-              <a class="read" href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxORE5XT1RZVlJfU1l3WHlJakxUZ3QyR0lyVExoMVlGaEFXNFVJVlZORDZ0Rmx0aEVCSzBWcW1kRjhDby1JRFFnc2hERE5HWVItZXF0b25NZFQ4QzBLSUgzTzRxdXZzNXROYUpPNHUtV1YwTDEydThZUmdNSElJMDRjYlJFTDRVTUxfSGdyQ2RtTkdhekZwZmgzc1lGZnV3WXo3SkdxYTdaTUMtdW5fMWFDZTNDVEtTWEozcE96MTI1bVA?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
-            </article>
-            <article class="card">
-              <p class="meta">Futebol brasileiro · 14/10/2026 às 16:43</p>
-              <h3><a href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxPU1YwZEZZYlRHb0dQcF9QaUdIZ001UUpOZFdxaU92Y1FJXzFZUmZvUlZwWjhWeW9iUGpDdWk4eXIxbmx4NnI5dC1JM3ZiVHpIOVl1VXRCVWNzZ2xWaE9IQXJ1WVcxMlRUMnM1OEQ1dEFoVnVyOGpta1FxX1FTSDVjeFhXTU5QZzk2aFF1aVEwdFMwYmF4S2lZZTY2NUtGalRIVVJzc1JERjljdk90U3BUV0EyVnFrWGdTUWhNYW40cWRLVjhVTjg3WXdhTVdDcmtfN0JuM0VJV0ZodWpqTEV2VHpjWEp0dlctbjF3QmpyYw?oc=5" target="_blank" rel="noopener noreferrer">Seedorf diz que Corinthians é um dos &#x27;maiores clubes do mundo&#x27;, mas foge de pergunta sobre futebol brasileiro - Folha de S.Paulo</a></h3>
-              <p class="source">Fonte: Folha de S.Paulo</p>
-              <a class="read" href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxPU1YwZEZZYlRHb0dQcF9QaUdIZ001UUpOZFdxaU92Y1FJXzFZUmZvUlZwWjhWeW9iUGpDdWk4eXIxbmx4NnI5dC1JM3ZiVHpIOVl1VXRCVWNzZ2xWaE9IQXJ1WVcxMlRUMnM1OEQ1dEFoVnVyOGpta1FxX1FTSDVjeFhXTU5QZzk2aFF1aVEwdFMwYmF4S2lZZTY2NUtGalRIVVJzc1JERjljdk90U3BUV0EyVnFrWGdTUWhNYW40cWRLVjhVTjg3WXdhTVdDcmtfN0JuM0VJV0ZodWpqTEV2VHpjWEp0dlctbjF3QmpyYw?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
+              <p class="meta">Futebol brasileiro · 13/10/2026 às 13:22</p>
+              <h3><a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNNEZMbzFpOXhoWjRxSlVkUms0cS10cU83SXhnQndMTEVtODhza2JzaS1iYXJURmlrSmZVOWViMG1qUVJpQ1JLU2pJTV9uRlJEaGNtcGh1aHU2U1BmTk9CYlk1aVVELVJkOXM3aUNycmtXVW0wdk9feF9xa1NQZDlTLUFQRXl5X3dwbHAxMTMwSk13YVlONUFZVmZ0OWgyWjc1dVZaUzVuN0diMG9LelFnOW5lcHNOYTJ3dUp6Yk9IMThrTk1Sek9qRml2MzE?oc=5" target="_blank" rel="noopener noreferrer">Risco de rebaixamento dispara para gigantes no Brasileirão; veja ranking - Band</a></h3>
+              <p class="source">Fonte: Band</p>
+              <a class="read" href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNNEZMbzFpOXhoWjRxSlVkUms0cS10cU83SXhnQndMTEVtODhza2JzaS1iYXJURmlrSmZVOWViMG1qUVJpQ1JLU2pJTV9uRlJEaGNtcGh1aHU2U1BmTk9CYlk1aVVELVJkOXM3aUNycmtXVW0wdk9feF9xa1NQZDlTLUFQRXl5X3dwbHAxMTMwSk13YVlONUFZVmZ0OWgyWjc1dVZaUzVuN0diMG9LelFnOW5lcHNOYTJ3dUp6Yk9IMThrTk1Sek9qRml2MzE?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
             </article>
             <article class="card">
               <p class="meta">Futebol brasileiro · 12/10/2026 às 12:56</p>
@@ -91,12 +197,6 @@ footer a{color:inherit} .disclaimer{font-size:13px;color:var(--muted);margin-top
               <a class="read" href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxOck5rLThLSkRWRjFndjBMM25vRTAzQ29sVmtucU5OZWZPb0UyeDh5X0cwd2djQUx4ZXZmZEdZRzNGSVl6OTNhTjZsQUhmSkxNWU5wYjJxTVk1Z1QxZE91VFpYMnFLd2s5Y2RjazdqUU9Db0tmaEYtbXNLZl9xWk5LaHF6SHVYajJMbzJLY01lSnRKeEdUVlFGRURBMWtSV2pFSzlJdzQyQzFURkE3akc3dXdSQ0Z4Wk1EQkpLcm9rRTRhVDZJLU00UnJNaGdHeXhDM0RXYUFNQ2hBMmNvcWN3?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
             </article>
             <article class="card">
-              <p class="meta">Libertadores e futebol internacional · 14/10/2026 às 11:56</p>
-              <h3><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQdTlfbkw1OC1aUXZEQ1JBWmk2OGpvQ0MtRGJFVDZLaGpzZmdJMTVid0dFUWpGWThZT0lGZktHeDNFbDVaUFdiVGVhVlhRalR2ZTg5SElyT1FteU50UlUwMUQ2NnlJa1NmV19PUmhaS0hWaE9uVk5ZSUxBSVVpYTdWd2lndzNteldqVXlGbTVwam1Lanc?oc=5" target="_blank" rel="noopener noreferrer">Jogos de hoje, quarta-feira (14/10): onde assistir futebol ao vivo na TV e online - Oficina da Net</a></h3>
-              <p class="source">Fonte: Oficina da Net</p>
-              <a class="read" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQdTlfbkw1OC1aUXZEQ1JBWmk2OGpvQ0MtRGJFVDZLaGpzZmdJMTVid0dFUWpGWThZT0lGZktHeDNFbDVaUFdiVGVhVlhRalR2ZTg5SElyT1FteU50UlUwMUQ2NnlJa1NmV19PUmhaS0hWaE9uVk5ZSUxBSVVpYTdWd2lndzNteldqVXlGbTVwam1Lanc?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
-            </article>
-            <article class="card">
               <p class="meta">Libertadores e futebol internacional · 14/10/2026 às 11:00</p>
               <h3><a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxPZmpLR2dQQjFSNUR4VHI2ZzdJa1dLOUxoTWVNRkFiTFdmNDhfYVZQMzduYlJMVzhDZzlLdF8xb2VqSnpPVFRXd3ZXLWNPSFdHNGRZcHpFTUd2QXFhd2lfUkhVU096NXU2LV9NV21rUUNiTUVYUlRYRldDbXRLQlhFeGloX2Y0cEFJazdkdDRvUi1TcU5EWDBLczl0cnRzSmZWUEliaUNqcEk1SDRZUUdGMjc1bjBGSDBPNFM2U3h4M1U5Qm00cXY2UFA3d1AwNXloLW9RZm9IR1Q?oc=5" target="_blank" rel="noopener noreferrer">Jogos de hoje (14/10/26): onde assistir futebol ao vivo e horários das partidas - Olhar Digital</a></h3>
               <p class="source">Fonte: Olhar Digital</p>
@@ -115,6 +215,12 @@ footer a{color:inherit} .disclaimer{font-size:13px;color:var(--muted);margin-top
               <a class="read" href="https://news.google.com/rss/articles/CBMisgFBVV95cUxNUWY5aUcySDJXR01zaVU3bmpOa2VJMURiV2dPcUVqekd3X01xTmRfb2JqREhBX0V0OHdNVUstbzhuTGFvc1BnckZfbG5rQUxyLWhqTXBjcF92RTRUVU56dXFFOGR1bGtWNno0aUE1SERndi1KQlF6dUlHUE16elozMjBXelV1SF9nQkRib3Fsc21mTHJTQ1dtbTlHdlJqdUg0S1BCUUpNUmZmVUVIc3pBT0VR?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
             </article>
             <article class="card">
+              <p class="meta">Libertadores e futebol internacional · 16/07/2026 às 07:00</p>
+              <h3><a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9QRk56N3VMbDd1MWNwYm9XVXNvY2pXdjNaWnJKR0hfcG1ZMThpTERnOFFDZG81cEFWUHd4YjFEWXJFdm81RE1zaUo0dTczOUtGUXFQSnpfem5BcWtlWWc?oc=5" target="_blank" rel="noopener noreferrer">De Libertadores a Champions League, Julián Álvarez é uma das promessas do futebol argentino; RELEMBRE gols na Premier League - ESPN Brasil</a></h3>
+              <p class="source">Fonte: ESPN Brasil</p>
+              <a class="read" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9QRk56N3VMbDd1MWNwYm9XVXNvY2pXdjNaWnJKR0hfcG1ZMThpTERnOFFDZG81cEFWUHd4YjFEWXJFdm81RE1zaUo0dTczOUtGUXFQSnpfem5BcWtlWWc?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
+            </article>
+            <article class="card">
               <p class="meta">Libertadores e futebol internacional · 29/05/2026 às 07:00</p>
               <h3><a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxQb0Vmemx4UW5MWUltRVAwTl82dVctRS1XVnp1SUZVUUJneFN0SGdNYnMyUXlLcjVGVVA1c2NsWHdjTGJXdmdfMTJNbHNJMmdhOGk4ZHNwQ0RIZUJCTmN2T0d4TU1wb1NhcGFnRVBYWlJ4SXJwdDJIb2pEeUJMQ2NyMlMxM1BaUDV6WmprQ0VMaWNONDhIX1hPQUlNSzVtYmpxUGVET3N1Tk5NaUZhbU14ZFE5SFFuSWpDdFN1eWFxSHNwTk9CMW9TbTZZREJ6R2c?oc=5" target="_blank" rel="noopener noreferrer">Champions League paga quatro vezes mais que a Libertadores ao campeão - UOL</a></h3>
               <p class="source">Fonte: UOL</p>
@@ -126,12 +232,6 @@ footer a{color:inherit} .disclaimer{font-size:13px;color:var(--muted);margin-top
               <p class="source">Fonte: Estadão</p>
               <a class="read" href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxNOVRsb2txczdNMW1oVE9lNTZNUzAyR2UwQXN0dnNiMnl3M29qYVYyTUN1Mi1DVS1pYjRqUUQ4em1ZWXZSRlhuaGJRRk1QLW5XSFVMamx1UjRBUHh5MklfZjFDVXc4M1dXSEtuQkZMVGJQT1FFRExPWDlvcmJPekpNU2J5azh1OUU1cWxsS05ILVNBSS1KS2J5TjB1VkZ0dWtjSkNkRWs5djdWWEo2R3pHYmRxazBKc0xwOHY0TUZtNGduTVQ4LTFfOEFGODlrenJFYXVtWlQteU1pdmV3cml2MdIB5gFBVV95cUxOUmx3X00yd0NrQVJFTGNyMGR3akplZWlBeklMQ0RBZFpxOEdGNkZfZFFoNDlVR0E3SDNRZk5ES3NzbE5PdUVpMnpVa3pPM3JZQlFBXzJvTXJ3c1h1LW5rWXdocUwzY3R4aEF5WmgxdkZpY3RXWG1Ja3V0emtNZHhrRDBkWGs1YU1XRTcyTXY1N3dqMWp2MzZoLWFTSmhMN1BwNnZ5bG43TFFjR1hpMF9palJyejQxeXVaNTQ2VWtjTjRMS0FIRW5kMzBfNXFmdTM5WFJiN0tNcEx0LWJEY21oOElpc0ZmZw?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
             </article></div></section><section><h2>Seleção brasileira</h2><div class="cards">
-            <article class="card">
-              <p class="meta">Seleção brasileira · 15/10/2026 às 01:57</p>
-              <h3><a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxQejdMd2VnY0FRZ1J0UXRtT1lNVHlxbFdEcDMtWXpmS1AwMlVNYzBWNjh5bFB1U0Z2R1VBRWc4Y1Y4MHUxOXVva1RQRjNFbUtnX25MbHJhcDQ3NDZnS2VMSGw2enNaVWZITkhpUnRocXNTcDFWcGpTNzhpODljSG04bml3Q1JhaWVDd2hvWWVCeFJJdDlrbmg1Q19ObS1pUm1fRVlpeDZHN05PclVOVzZoM2hYN1J5b1o2N3lJWjR1OEo2UlhzZ2o5Y2FXNEY0Zw?oc=5" target="_blank" rel="noopener noreferrer">Internacional busca empate com Atlético-MG pela Copa do Brasil Feminina - CNN Brasil</a></h3>
-              <p class="source">Fonte: CNN Brasil</p>
-              <a class="read" href="https://news.google.com/rss/articles/CBMizgFBVV95cUxQejdMd2VnY0FRZ1J0UXRtT1lNVHlxbFdEcDMtWXpmS1AwMlVNYzBWNjh5bFB1U0Z2R1VBRWc4Y1Y4MHUxOXVva1RQRjNFbUtnX25MbHJhcDQ3NDZnS2VMSGw2enNaVWZITkhpUnRocXNTcDFWcGpTNzhpODljSG04bml3Q1JhaWVDd2hvWWVCeFJJdDlrbmg1Q19ObS1pUm1fRVlpeDZHN05PclVOVzZoM2hYN1J5b1o2N3lJWjR1OEo2UlhzZ2o5Y2FXNEY0Zw?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
-            </article>
             <article class="card">
               <p class="meta">Seleção brasileira · 15/10/2026 às 01:33</p>
               <h3><a href="https://news.google.com/rss/articles/CBMi9gFBVV95cUxNWDhqUllUMXMxLVFzSk9jR0V1MzQwNDd5VVMtLW51eXlVdGdoMU8zYTNpSEF1UUR4MXhTSnpFaUE3SDNXdm03dnJLdmFvQlFIOGVVZWQxVHV2TktrN2lobUUzMUVNbmhqNE9RMEc2UlBnOUlka2dPeE5rQ3NPeFdDc1RFWXY0YkJtWVlzT0JwWjhTZVVPZERyVnJsSDl3NXhHdXk0WnVzeTdQTmdSek1vR0VCRS1yd0s1WEd2cUU3NjZVZUNfcjFXc1N6YTdxeXNjdGRidF9xOVRnV3pha2FJZXRrN2tLdjliV0hiNWZTcm5pazZqUUE?oc=5" target="_blank" rel="noopener noreferrer">Inter chama filho de Dunga para comissão técnica do time profissional - GZH</a></h3>
@@ -167,6 +267,12 @@ footer a{color:inherit} .disclaimer{font-size:13px;color:var(--muted);margin-top
               <h3><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOOEJWcWdEQzdtSnZmZFlBSXdycVZMa2VRMUZ3RUhSODhqMW1za0VTMTV1SWZIWHQyQ2tGb2pwS3hmTThuRTh4TkljelY1NjlBOUpFZ21DOGd2OGllWGtJdE1PNXhtVWhBNTlKUzJmN2ZRRkZveEQyV0hhT3RUMUVsNTh1NkFaS1JCQjRPd25qQTA1UVVRUEJGSElFWmM2Y1EwaGgzbUxucnN1Zzk1aGNibg?oc=5" target="_blank" rel="noopener noreferrer">CBF marca partida do Palmeiras com o Botafogo pela Copa do Brasil - www.jornalcruzeiro.com.br</a></h3>
               <p class="source">Fonte: www.jornalcruzeiro.com.br</p>
               <a class="read" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOOEJWcWdEQzdtSnZmZFlBSXdycVZMa2VRMUZ3RUhSODhqMW1za0VTMTV1SWZIWHQyQ2tGb2pwS3hmTThuRTh4TkljelY1NjlBOUpFZ21DOGd2OGllWGtJdE1PNXhtVWhBNTlKUzJmN2ZRRkZveEQyV0hhT3RUMUVsNTh1NkFaS1JCQjRPd25qQTA1UVVRUEJGSElFWmM2Y1EwaGgzbUxucnN1Zzk1aGNibg?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
+            </article>
+            <article class="card">
+              <p class="meta">Seleção brasileira · 13/10/2026 às 12:16</p>
+              <h3><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQYXhtY3VuYmQtWTFIQjhtcDhFajBoeG50d2VxWi10bTJWaTV3al92RjdZZXlnM0haMzNVYUxHYlFaTlVQSVhjUTVkaHkxOC1OYTNPdG9mWWdCNWdQYm5UYWpEZF9XbXhNZnJTQnVlTHVmZ2FRSkxWNTZYQ0N2dmdPblNhRUNqMUswdWpsbVRGTnJfS3h0Z2pJOTQ5V05MWllPUi1fQ0R0UjdleFU4azNpOFc2N2kzT1NJVzVMdi05dw?oc=5" target="_blank" rel="noopener noreferrer">Time de Ronaldo e Roberto Carlos volta à Série B do Brasileiro após 35 anos - CNN Brasil</a></h3>
+              <p class="source">Fonte: CNN Brasil</p>
+              <a class="read" href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQYXhtY3VuYmQtWTFIQjhtcDhFajBoeG50d2VxWi10bTJWaTV3al92RjdZZXlnM0haMzNVYUxHYlFaTlVQSVhjUTVkaHkxOC1OYTNPdG9mWWdCNWdQYm5UYWpEZF9XbXhNZnJTQnVlTHVmZ2FRSkxWNTZYQ0N2dmdPblNhRUNqMUswdWpsbVRGTnJfS3h0Z2pJOTQ5V05MWllPUi1fQ0R0UjdleFU4azNpOFc2N2kzT1NJVzVMdi05dw?oc=5" target="_blank" rel="noopener noreferrer">Ler na fonte original ↗</a>
             </article>
             <article class="card">
               <p class="meta">Seleção brasileira · 13/10/2026 às 05:00</p>
