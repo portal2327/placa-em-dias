@@ -25,19 +25,16 @@ jobs:
         run: python atualizar.py
 
       - name: Salvar notícias no GitHub
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Verifica se a pasta existe antes de adicionar
-          if [ -d "noticias" ]; then
-            git add noticias/
-          fi
-          
-          # Apenas faz commit se houver alterações
-          if ! git diff --cached --quiet; then
-            git commit -m "Atualizar notícias"
-            git push
-          else
-            echo "Nenhuma alteração para salvar."
-          fi
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        
+        # Mostra o estado para depuração
+        git status
+        
+        # Adiciona quaisquer ficheiros modificados no repositório (index.html, estado.json, etc.)
+        git add -A
+        
+        # Faz commit e push apenas se houver alterações detetadas
+        git diff --cached --quiet || git commit -m "Atualiza notícias esportivas"
+        git push
