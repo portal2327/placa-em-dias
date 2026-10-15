@@ -174,11 +174,16 @@ def build_page(items, errors):
 </style>
 </head>
 <body>
-<header><div class="wrap">
-<p class="brand">⚽ PLACAR EM DIA</p>
-<p>Futebol, resultados e notícias do mundo esportivo.</p>
-<p class="updated">Atualizado automaticamente: {escape(now)}</p>
-</div></header>
+<header>
+    <div class="header-container">
+      <div class="brand-badge">
+        <span>⚽</span> Portal Oficial de Notícias
+      </div>
+      <h1>Placar em Dia</h1>
+      <p class="subtitle">Futebol, resultados em tempo real e as principais manchetes do mundo desportivo.</p>
+      <p class="updated">Atualizado automaticamente em {now}</p>
+    </div>
+  </header>
 <main class="wrap">
 {warning}
 {''.join(sections)}
