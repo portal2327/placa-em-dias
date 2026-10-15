@@ -91,15 +91,35 @@ def build_page(items, errors):
     if errors:
         warning = '<p class="notice">Algumas fontes não responderam nesta atualização. As notícias disponíveis foram mantidas.</p>'
 
-    return f"""<!doctype html>
+  return f"""<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Portal independente com manchetes e links para notícias de futebol e outros esportes.">
-<title>Placar em Dia | Futebol e Esportes</title>
-<style>
-  header {
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placar em Dia</title>
+  <style>
+    :root {{
+      --header-bg: #0b3c26;
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+    }}
+
+    * {{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }}
+
+    body {{
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.5;
+    }}
+
+    header {{
       background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
       color: white;
       padding: 3.5rem 1.5rem;
@@ -108,27 +128,16 @@ def build_page(items, errors):
       overflow: hidden;
       border-bottom: 4px solid #10b981;
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
-    }
+    }}
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .header-container {
+    .header-container {{
       max-width: 1200px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
-    }
+    }}
 
-    .brand-badge {
+    .brand-badge {{
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -140,37 +149,132 @@ def build_page(items, errors):
       letter-spacing: 1px;
       text-transform: uppercase;
       margin-bottom: 12px;
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
+    }}
 
-    header h1 {
+    header h1 {{
       font-size: 2.8rem;
       font-weight: 800;
       letter-spacing: -1px;
       text-transform: uppercase;
       margin-bottom: 8px;
-      background: linear-gradient(to right, #ffffff, #a7f3d0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+      color: #ffffff;
+    }}
 
-    header p.subtitle {
+    header p.subtitle {{
       font-size: 1.1rem;
       opacity: 0.85;
       max-width: 600px;
       margin: 0 auto 12px auto;
-      font-weight: 400;
-    }
+    }}
 
-    header p.updated {
+    header p.updated {{
       font-size: 0.8rem;
       opacity: 0.6;
       background: rgba(0, 0, 0, 0.2);
       display: inline-block;
       padding: 4px 12px;
       border-radius: 20px;
-    }
+    }}
+
+    main {{
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }}
+
+    .category-title {{
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--header-bg);
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #2e7d32;
+      padding-left: 12px;
+    }}
+
+    .cards {{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }}
+
+    .card {{
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: all 0.25s ease-in-out;
+    }}
+
+    .card:hover {{
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }}
+
+    .meta {{
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }}
+
+    h3 {{
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }}
+
+    h3 a {{
+      color: var(--text-main);
+      text-decoration: none;
+    }}
+
+    h3 a:hover {{
+      color: #1b5e20;
+    }}
+
+    .source {{
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }}
+
+    .read {{
+      display: inline-block;
+      text-decoration: none;
+      color: #1b5e20;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      background-color: #e8f5e9;
+      border-radius: 6px;
+      align-self: flex-start;
+    }}
+
+    .read:hover {{
+      background-color: #c8e6c9;
+    }}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="brand-badge">
+        <span>⚽</span> Portal Oficial de Notícias
+      </div>
+      <h1>Placar em Dia</h1>
+      <p class="subtitle">Futebol, resultados em tempo real e as principais manchetes do mundo desportivo.</p>
+      <p class="updated">Atualizado automaticamente em {now}</p>
+    </div>
+  </header>
+  <main>
+    { "".join(sections) }
+    { warning }
+  </main>
+</body>
+</html>
+"""
 </style>
 </head>
 <body>
