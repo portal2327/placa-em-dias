@@ -275,7 +275,6 @@ def build_page(items, errors):
 </body>
 </html>
 """
-</style>
 </head>
 <body>
 <header>
